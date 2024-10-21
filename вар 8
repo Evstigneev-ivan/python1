@@ -1,0 +1,33 @@
+#Задание 1
+password = input("Введите пароль: ")
+
+if len(password) < 8 or password == "qwerty123":
+    print(False)
+else:
+    print(True)
+    
+    
+#Задание 2
+pc_number = 777
+num1 = int(input("Введите первое число: "))
+num2 = int(input("Введите второе число: "))
+
+if (num1 < pc_number < num2) or (num2 < pc_number < num1):
+    print(True)
+else:
+    print(False)
+    
+    
+#Задание3 
+lamp_1 = 0
+lamp_2 = 0
+choice = input("Какую лампочку зажечь? (1 или 2): ")
+
+if choice == "1":
+    lamp_1 = 1
+    print("Лампочка 1 зажглась")
+elif choice == "2":
+    lamp_2 = 1
+    print("Лампочка 2 зажглась")
+else:
+    print("Обе лампочки не горят")
