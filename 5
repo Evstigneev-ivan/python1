@@ -1,0 +1,136 @@
+#задание1
+x = int(input("Введите ваш возраст"))
+if x < 18 :
+    print("Вы несовершеннолетний")
+elif 18 <= x <= 65 :
+    print("Вы трудоспособный человек")
+else:
+    print("Вы пенсионер")
+#задание2
+cost = int(input("Введите стоимость покупки"))
+if cost < 1000 :
+    print("скидка 5%")
+elif 1000 <= cost <= 5000 :
+    print("скидка 10%")
+#задание3
+operation=input
+if operation == "+" :
+    result = num1 +num2
+elif operation == "-" :
+    result = num1 - num2
+elif operation == "*" :
+    result = num1 * num2
+elif operation == "/" :
+    if num2 != 0 :
+        result = num1 / num2 
+    else:
+            print("Ошибка : деление на ноль!")
+            exit()
+else:
+    print("Неверная операция")
+    exit()
+    
+print("Результат:", result)
+#задание4
+num = int(input("Введите число:"))
+
+if num % 2 == 0 and (num % 10 == 2 or num % 10 == 6):
+    print(True)
+else:
+    print(False)
+#задание5
+password= "my_secret_password"
+
+user_input = input("Введите пароль :")
+
+if user_input == password:
+    print("Доступ разрешен.")
+else:
+    print("Неверный пароль.")
+#Задание 6
+squares = {
+    'A1': 'зелёный', 
+    'A2': 'серый', 
+    'A3': 'синий', 
+    'B1': 'синий', 
+    'B2': 'зелёный', 
+    'B3': 'серый',
+    'C1': 'серый', 
+    'C2': 'синий', 
+    'C3': 'зелёный'
+}
+
+coordinate = input("Введите координаты квадрата (например, B1): ").strip().upper()
+
+if coordinate in squares:
+    if squares[coordinate] == 'зелёный':
+        print("В данном квадрате обитает зелёный попугай.")
+    elif squares[coordinate] == 'синий':
+        print("В данном квадрате обитает синий попугай.")
+    else:
+        print("В данном квадрате никто не сидит.")
+else:
+    print("Такой квадрат не существует.")
+#задание 7
+n = int(input("Введите число n: "))
+k = int(input("Введите число k: "))
+
+if k == 0:
+    print("На ноль делить нельзя!")
+else:
+    if n % k == 0:
+        print(f"{n} кратно {k}.")
+    else:
+        print(f"{n} не кратно {k}.")
+#задание 8
+def check_player_status(level, health):
+    if level < 0 or health < 0 or health > 100:
+        print("Некорректные данные.")
+        return
+
+    if level < 5:
+        print("Ваш уровень слишком низкий для выполнения миссии.")
+    else:
+        if health > 50:
+            print("Вы готовы к миссии!")
+        elif health >= 20:
+            print("Ваше здоровье низкое, будьте осторожны.")
+        else:
+            print("Ваше здоровье слишком низкое для выполнения миссии.")
+
+try:
+    player_level = int(input("Введите уровень игрока: "))
+    player_health = int(input("Введите количество здоровья игрока: "))
+    
+    check_player_status(player_level, player_health)
+
+except ValueError:
+    print("Ввод должен быть числом.")
+#задание 9
+inventory = ["яблоко", "шариковая ручка"]
+
+has_key = "ключ" in inventory
+has_lantern = "фонарь" in inventory
+
+if has_key and has_lantern:
+    print("Вы можете пройти через дверь.")
+elif not has_key and not has_lantern:
+    print("У вас нет ни ключа, ни фонаря, вы не можете пройти через дверь.")
+elif not has_key:
+    print("У вас нет ключа, вы не можете открыть дверь.")
+elif not has_lantern:
+    print("У вас нет фонаря, слишком темно, чтобы пройти.")
+#задание 10
+king = "Enemies are coming! Are the archers ready?"
+warrior = "For the Alliance!"
+magician = "The spell is ready."
+
+def check_phrase(phrase):
+    if phrase.endswith('?') or phrase.endswith('!'):
+        print(f'"{phrase}" - содержит знак в конце.')
+    else:
+        print(f'"{phrase}" - не содержит знаков ? или ! в конце.')
+
+check_phrase(king)
+check_phrase(warrior)
+check_phrase(magician)
